@@ -39,6 +39,15 @@ namespace MeetHub.API.Entities
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the events navigation property for the event constraint type class
+        /// </summary>
+        public List<Event> Events
+        {
+            get;
+            set;
+        }
+
         #endregion Properties
     }
 }
