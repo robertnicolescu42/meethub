@@ -11,7 +11,7 @@ namespace MeetHub.API.Entities
         #region Properties
 
         /// <summary>
-        /// The Id field of the location class
+        /// Gets or sets the Id field of the location class
         /// </summary>
         [Key]
         public int Id 
@@ -21,7 +21,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// The latitude field of the location class
+        /// Gets or sets the latitude field of the location class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Latitude
@@ -31,7 +31,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// The longitude field of the location class
+        /// Gets or sets the longitude field of the location class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Longitude
@@ -41,7 +41,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// The location name of the location class
+        /// Gets or sets the location name of the location class
         /// </summary>
         public string LocationName
         {

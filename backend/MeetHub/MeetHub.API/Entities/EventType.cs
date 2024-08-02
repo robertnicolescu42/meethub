@@ -11,7 +11,7 @@ namespace MeetHub.API.Entities
         #region Properties
 
         /// <summary>
-        /// The Id field of the event type class
+        /// Gets or sets the Id field of the event type class
         /// </summary>
         [Key]
         public int Id
@@ -21,7 +21,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// The title field of the eevent type class
+        /// Gets or sets the title field of the eevent type class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Title
@@ -31,7 +31,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// The description field of the event type class
+        /// Gets or sets the description field of the event type class
         /// </summary>
         public string Description
         {
