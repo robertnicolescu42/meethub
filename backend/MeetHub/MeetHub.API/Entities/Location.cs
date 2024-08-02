@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MeetHub.API.Helpers;
+using System.ComponentModel.DataAnnotations;
 
 namespace MeetHub.API.Entities
 {
@@ -7,13 +8,6 @@ namespace MeetHub.API.Entities
     /// </summary>
     public class Location
     {
-
-        #region Fields
-
-        private const string cmRequiredErrorMessage = "This field is a required field";
-
-        #endregion Fields
-
         #region Properties
 
         /// <summary>
@@ -29,7 +23,7 @@ namespace MeetHub.API.Entities
         /// <summary>
         /// The latitude field of the location class
         /// </summary>
-        [Required(ErrorMessage = cmRequiredErrorMessage)]
+        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Latitude
         {
             get;
@@ -39,7 +33,7 @@ namespace MeetHub.API.Entities
         /// <summary>
         /// The longitude field of the location class
         /// </summary>
-        [Required(ErrorMessage = cmRequiredErrorMessage)]
+        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Longitude
         {
             get;
