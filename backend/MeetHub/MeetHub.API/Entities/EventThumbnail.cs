@@ -30,6 +30,15 @@ namespace MeetHub.API.Entities
             set; 
         }
 
+        /// <summary>
+        /// Gets or sets the events navigation property for the event  thumbnail class
+        /// </summary>
+        public List<Event> Events
+        {
+            get;
+            set;
+        }
+
         #endregion Properties
     }
 }

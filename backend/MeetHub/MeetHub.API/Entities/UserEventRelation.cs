@@ -4,55 +4,45 @@ using System.ComponentModel.DataAnnotations;
 namespace MeetHub.API.Entities
 {
     /// <summary>
-    /// The location entity class
+    /// The user-event relation entity class
     /// </summary>
-    public class Location
+    public class UserEventRelation
     {
         #region Properties
 
         /// <summary>
-        /// Gets or sets the Id field of the location class
-        /// </summary>
-        [Key]
-        public int Id 
-        { 
-            get; 
-            set; 
-        }
-
-        /// <summary>
-        /// Gets or sets the latitude field of the location class
+        /// Gets or sets the user Id field of user-event relation class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
-        public string Latitude
+        public int UserId
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the longitude field of the location class
+        /// Gets or sets the event Id of the user-event relation class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
-        public string Longitude
+        public int EventId
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the location name of the location class
+        /// Gets or sets the user navigation property of the user-event relation class
         /// </summary>
-        public string LocationName
+        public User User
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the events navigation property for the location class
+        /// Gets or sets the event navigation property of the user-event relation class
         /// </summary>
-        public List<Event> Events
+        public Event Event
         {
             get;
             set;
