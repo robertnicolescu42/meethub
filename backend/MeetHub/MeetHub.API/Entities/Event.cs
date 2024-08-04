@@ -31,7 +31,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the description field if the event field
+        /// Gets or sets the description field if the event class
         /// </summary>
         public string Description
         {

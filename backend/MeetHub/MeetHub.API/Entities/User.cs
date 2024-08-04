@@ -89,7 +89,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the user access level property of the user class
+        /// Gets or sets the user access level navigation property of the user class
         /// </summary>
         public UserAccessLevel UserAccessLevel
         {

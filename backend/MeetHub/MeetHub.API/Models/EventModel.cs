@@ -8,7 +8,7 @@
         #region Properties
 
         /// <summary>
-        /// Gets or sets the Id field of the event class
+        /// Gets or sets the Id field of the event model class
         /// </summary>
         public int Id
         {
@@ -17,7 +17,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the title field for the event class
+        /// Gets or sets the title field for the event model class
         /// </summary>
         public string Title
         {
@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the start date field for the event class
+        /// Gets or sets the start date field for the event model class
         /// </summary>
         public DateTime StartDate
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the end date field for the event class
+        /// Gets or sets the end date field for the event model class
         /// </summary>
         public DateTime EndDate
         {
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the location Id field for the event class
+        /// Gets or sets the location Id field for the event model class
         /// </summary>
         public int LocationId
         {
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the creator Id field for the event class
+        /// Gets or sets the creator Id field for the event model class
         /// </summary>
         public int CreatorId
         {
@@ -71,7 +71,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the event type Id field for the event class
+        /// Gets or sets the event type Id field for the event model class
         /// </summary>
         public int EventTypeId
         {
@@ -80,7 +80,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the event constraint type Id field for the event class
+        /// Gets or sets the event constraint type Id field for the event model class
         /// </summary>
         public int EventConstraintTypeId
         {
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the is age restricted field for the event class
+        /// Gets or sets the is age restricted field for the event model class
         /// </summary>
         public bool MaximumAgeAllowed
         {
@@ -98,7 +98,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the minimum age allowed field for the event class
+        /// Gets or sets the minimum age allowed field for the event model class
         /// </summary>
         public int MinimumAgeAllowd
         {
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the maximum age allowed field for the event class
+        /// Gets or sets the maximum age allowed field for the event model class
         /// </summary>
         public bool IsAgeRestricted
         {
@@ -116,7 +116,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the enter fee field for event class
+        /// Gets or sets the enter fee field for event model class
         /// </summary>
         public int EnterFee
         {
@@ -125,7 +125,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the currency Id field for event class
+        /// Gets or sets the currency Id field for event model class
         /// </summary>
         public int CurrencyId
         {
@@ -134,7 +134,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the event thumbnail Id field for event class
+        /// Gets or sets the event thumbnail Id field for event model class
         /// </summary>
         public int EventThumbnailId
         {
@@ -143,7 +143,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the minimum number of participants field for event class
+        /// Gets or sets the minimum number of participants field for event model class
         /// </summary>
         public int MinimumNumberOfParticipants
         {
@@ -152,7 +152,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the maximum number of participants field for event class
+        /// Gets or sets the maximum number of participants field for event model class
         /// </summary>
         public int MaximumNumberOfParticipants
         {
