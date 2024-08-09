@@ -1,19 +1,17 @@
-﻿using MeetHub.API.Helpers;
-using System.ComponentModel.DataAnnotations;
+﻿using MeetHub.API.Entities;
 
-namespace MeetHub.API.Entities
+namespace MeetHub.API.Models.ComplexModels
 {
     /// <summary>
-    /// The event entity class
+    /// The event schema model class
     /// </summary>
-    public class Event
+    public class EventSchemaModel
     {
         #region Properties
 
         /// <summary>
-        /// Gets or sets the Id field of the event class
+        /// Gets or sets the Id field of the event schema model class class
         /// </summary>
-        [Key]
         public int Id
         {
             get;
@@ -21,9 +19,8 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the title field for the event class
+        /// Gets or sets the title field for the event schema model class class
         /// </summary>
-        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public string Title
         {
             get;
@@ -31,7 +28,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the description field if the event class
+        /// Gets or sets the description field if the event schema model class class
         /// </summary>
         public string Description
         {
@@ -40,7 +37,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the start date field for the event class
+        /// Gets or sets the start date field for the event schema model class class
         /// </summary>
         public DateTime StartDate
         {
@@ -49,7 +46,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the end date field for the event class
+        /// Gets or sets the end date field for the event schema model class class
         /// </summary>
         public DateTime EndDate
         {
@@ -58,7 +55,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the location Id field for the event class
+        /// Gets or sets the location Id field for the event schema model class class
         /// </summary>
         public int LocationId
         {
@@ -67,9 +64,8 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the creator Id field for the event class
+        /// Gets or sets the creator Id field for the event schema model class class
         /// </summary>
-        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public int CreatorId
         {
             get;
@@ -77,9 +73,8 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the event type Id field for the event class
+        /// Gets or sets the event type Id field for the event schema model class class
         /// </summary>
-        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public int EventTypeId
         {
             get;
@@ -87,9 +82,8 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the event constraint type Id field for the event class
+        /// Gets or sets the event constraint type Id field for the event schema model class class
         /// </summary>
-        [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
         public int EventConstraintTypeId
         {
             get;
@@ -97,7 +91,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the is age restricted field for the event class
+        /// Gets or sets the is age restricted field for the event schema model class class
         /// </summary>
         public bool MaximumAgeAllowed
         {
@@ -106,7 +100,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the minimum age allowed field for the event class
+        /// Gets or sets the minimum age allowed field for the event schema model class class
         /// </summary>
         public int MinimumAgeAllowd
         {
@@ -115,7 +109,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the maximum age allowed field for the event class
+        /// Gets or sets the maximum age allowed field for the event schema model class class
         /// </summary>
         public bool IsAgeRestricted
         {
@@ -124,7 +118,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the enter fee field for event class
+        /// Gets or sets the enter fee field for event schema model class class
         /// </summary>
         public int EnterFee
         {
@@ -133,7 +127,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the currency Id field for event class
+        /// Gets or sets the currency Id field for event schema model class class
         /// </summary>
         public int CurrencyId
         {
@@ -142,7 +136,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the event thumbnail Id field for event class
+        /// Gets or sets the event thumbnail Id field for event schema model class class
         /// </summary>
         public int EventThumbnailId
         {
@@ -151,7 +145,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the minimum number of participants field for event class
+        /// Gets or sets the minimum number of participants field for event schema model class class
         /// </summary>
         public int MinimumNumberOfParticipants
         {
@@ -160,7 +154,7 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the maximum number of participants field for event class
+        /// Gets or sets the maximum number of participants field for event schema model class class
         /// </summary>
         public int MaximumNumberOfParticipants
         {
@@ -169,77 +163,51 @@ namespace MeetHub.API.Entities
         }
 
         /// <summary>
-        /// Gets or sets the location navigation property for event class
+        /// Gets or sets the event type property for event schema model class
         /// </summary>
-        public Location Location
+        public EventTypeModel EventType
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the user navigation property for event class
+        /// Gets or sets the event constraint type property for event schema model class
         /// </summary>
-        public User User
+        public EventConstraintTypeModel EventConstraintType
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the event type navigation property for event class
+        /// Gets or sets the currency property for event schema model class
         /// </summary>
-        public EventType EventType
+        public CurrencyModel Currency
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the event constraint type navigation property for event class
+        /// Gets or sets the event thumbnail property for event schema model class
         /// </summary>
-        public EventConstraintType EventConstraintType
+        public EventThumbnailModel EventThumbnail
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the currency navigation property for event class
+        /// Gets or sets the event users property for event schema model class
         /// </summary>
-        public Currency Currency
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Gets or sets the event thumbnail navigation property for event class
-        /// </summary>
-        public EventThumbnail EventThumbnail
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Gets or sets the event to user relations navigation property for event class
-        /// </summary>
-        public List<UserEventRelation> Relations
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Gets or sets the generated invites navigation property for event class
-        /// </summary>
-        public List<GeneratedInvite> GeneratedInvites
+        public List<UserModel> Users
         {
             get;
             set;
         }
 
         #endregion Properties
+
     }
 }
