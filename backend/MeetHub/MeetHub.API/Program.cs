@@ -1,5 +1,6 @@
 using MeetHub.API.Context;
 using MeetHub.API.Mappers;
+using MeetHub.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,12 @@ builder.Services.AddAutoMapper(typeof(GeneratedInviteMapper));
 builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 
 #endregion AutoMapper Profiles
+
+#region Database action
+
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+
+#endregion Database action
 
 var app = builder.Build();
 
