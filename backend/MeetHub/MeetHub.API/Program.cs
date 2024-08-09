@@ -1,4 +1,6 @@
+using MeetHub.API.Context;
 using MeetHub.API.Mappers;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#region Database conenction
+
+builder.Services.AddDbContext<MeetHubDatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+
+#endregion Database connection
 
 #region AutoMapper Profiles
 
