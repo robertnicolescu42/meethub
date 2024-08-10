@@ -31,8 +31,7 @@ namespace MeetHub.API.Repositories
         /// Adds currency to database asyncronous
         /// </summary>
         /// <param name="currency"> The currency model </param>
-        /// <returns></returns>
-        Task<CurrencyModel> AddCurrencyAsync(CurrencyModel currency);
+        void AddCurrencyAsync(CurrencyModel currency);
 
         /// <summary>
         /// Update the currency from dataabase
@@ -44,7 +43,7 @@ namespace MeetHub.API.Repositories
         /// Removes currency from database
         /// </summary>
         /// <param name="currencyId"> The currency id</param>
-        void DeleteLocation(int currencyId);
+        void DeleteCurrency(int currencyId);
 
         #endregion Methods
     }
@@ -98,26 +97,23 @@ namespace MeetHub.API.Repositories
         /// Adds currency to database asyncronous
         /// </summary>
         /// <param name="currency"> The currency model </param>
-        /// <returns></returns>
-        public async Task<CurrencyModel> AddCurrencyAsync(CurrencyModel currency)
+        public async void AddCurrencyAsync(CurrencyModel currency)
         {
             try
             {
                 var inserting_currency = _rmMapper.Map<Currency>(currency);
                 await _rmDatabaseContext.Currencies.AddAsync(inserting_currency);
                 await _rmDatabaseContext.SaveChangesAsync();
-                return currency;
 
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("There was an issue with the inserting operation: \n" + ex.Message);
-                return null;
             }
         }
 
         /// <summary>
-        /// Update the currency from dataabase
+        /// Updates the currency from dataabase
         /// </summary>
         /// <param name="currency"> The updated currency model</param>
         public async void UpdateCurrency(CurrencyModel currency)
@@ -138,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes currency from database
         /// </summary>
         /// <param name="currencyId"> The currency id</param>
-        public async void DeleteLocation(int currencyId)
+        public async void DeleteCurrency(int currencyId)
         {
             try
             {
-                var currency = await _rmDatabaseContext.Currencies.FirstOrDefaultAsync(loc => loc.Id == currencyId);
+                var currency = await _rmDatabaseContext.Currencies.FirstOrDefaultAsync(curr => curr.Id == currencyId);
                 _rmDatabaseContext.Currencies.Remove(currency);
                 await _rmDatabaseContext.SaveChangesAsync();
             }

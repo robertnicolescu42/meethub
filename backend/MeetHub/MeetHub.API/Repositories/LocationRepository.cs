@@ -31,11 +31,10 @@ namespace MeetHub.API.Repositories
         /// Adds location to database asyncronous
         /// </summary>
         /// <param name="location"> The location model </param>
-        /// <returns></returns>
-        Task<LocationModel> AddLocationAsync(LocationModel location);
+        void AddLocationAsync(LocationModel location);
 
         /// <summary>
-        /// Update the location from dataabase
+        /// Updates the location from dataabase
         /// </summary>
         /// <param name="location"> The updated location model</param>
         void UpdateLocation(LocationModel location);
@@ -99,21 +98,18 @@ namespace MeetHub.API.Repositories
         /// Adds location to database asyncronous
         /// </summary>
         /// <param name="location"> The location model </param>
-        /// <returns></returns>
-        public async Task<LocationModel> AddLocationAsync(LocationModel location)
+        public async void AddLocationAsync(LocationModel location)
         {
             try
             {
                 var inserting_location = _rmMapper.Map<Location>(location);
                 await _rmDatabaseContext.Locations.AddAsync(inserting_location);
                 await _rmDatabaseContext.SaveChangesAsync();
-                return location;
 
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("There was an issue with the inserting operation: \n" + ex.Message);
-                return null;
             }
         }
 
