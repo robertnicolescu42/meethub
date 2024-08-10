@@ -28,7 +28,7 @@ namespace MeetHub.API.Repositories
         Task<LocationModel> GetLocationByIdAsync(int locationId);
 
         /// <summary>
-        /// Adds location to database
+        /// Adds location to database asyncronous
         /// </summary>
         /// <param name="location"> The location model </param>
         /// <returns></returns>
@@ -43,7 +43,7 @@ namespace MeetHub.API.Repositories
         /// <summary>
         /// Removes location from database
         /// </summary>
-        /// <param name="locationId"></param>
+        /// <param name="locationId"> The location id </param>
         void DeleteLocation(int locationId);
 
         #endregion Methods
@@ -96,7 +96,7 @@ namespace MeetHub.API.Repositories
         }
 
         /// <summary>
-        /// Adds location to database
+        /// Adds location to database asyncronous
         /// </summary>
         /// <param name="location"> The location model </param>
         /// <returns></returns>
@@ -126,7 +126,7 @@ namespace MeetHub.API.Repositories
             try
             {
                 var updating_location = _rmMapper.Map<Location>(location);
-                _rmDatabaseContext.Update(updating_location);
+                _rmDatabaseContext.Locations.Update(updating_location);
                 await _rmDatabaseContext.SaveChangesAsync();
             }
             catch (SqlException ex)
@@ -138,7 +138,7 @@ namespace MeetHub.API.Repositories
         /// <summary>
         /// Removes location from database
         /// </summary>
-        /// <param name="locationId"></param>
+        /// <param name="locationId"> The location id </param>
         public async void DeleteLocation(int locationId)
         {
             try
