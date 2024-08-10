@@ -42,6 +42,7 @@ builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
 builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRepository>();
 builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 #endregion Database action
 
