@@ -38,6 +38,7 @@ builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 #region Database action
 
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 
 #endregion Database action
 
