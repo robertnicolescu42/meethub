@@ -40,6 +40,7 @@ builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
+builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRepository>();
 
 #endregion Database action
 
