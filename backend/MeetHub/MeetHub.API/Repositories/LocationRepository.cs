@@ -28,10 +28,10 @@ namespace MeetHub.API.Repositories
         Task<LocationModel> GetLocationByIdAsync(int locationId);
 
         /// <summary>
-        /// Adds location to database asyncronous
+        /// Adds location to database
         /// </summary>
         /// <param name="location"> The location model </param>
-        void AddLocationAsync(LocationModel location);
+        void AddLocation(LocationModel location);
 
         /// <summary>
         /// Updates the location from dataabase
@@ -95,10 +95,10 @@ namespace MeetHub.API.Repositories
         }
 
         /// <summary>
-        /// Adds location to database asyncronous
+        /// Adds location to database
         /// </summary>
         /// <param name="location"> The location model </param>
-        public async void AddLocationAsync(LocationModel location)
+        public async void AddLocation(LocationModel location)
         {
             try
             {

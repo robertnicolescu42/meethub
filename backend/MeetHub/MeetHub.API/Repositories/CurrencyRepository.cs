@@ -28,10 +28,10 @@ namespace MeetHub.API.Repositories
         Task<CurrencyModel> GetCurrencyByIdAsync(int currencyId);
 
         /// <summary>
-        /// Adds currency to database asyncronous
+        /// Adds currency to database
         /// </summary>
         /// <param name="currency"> The currency model </param>
-        void AddCurrencyAsync(CurrencyModel currency);
+        void AddCurrency(CurrencyModel currency);
 
         /// <summary>
         /// Update the currency from dataabase
@@ -94,10 +94,10 @@ namespace MeetHub.API.Repositories
         }
 
         /// <summary>
-        /// Adds currency to database asyncronous
+        /// Adds currency to database
         /// </summary>
         /// <param name="currency"> The currency model </param>
-        public async void AddCurrencyAsync(CurrencyModel currency)
+        public async void AddCurrency(CurrencyModel currency)
         {
             try
             {

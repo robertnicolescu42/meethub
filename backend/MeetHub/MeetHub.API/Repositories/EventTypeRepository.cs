@@ -28,10 +28,10 @@ namespace MeetHub.API.Repositories
         Task<EventTypeModel> GetEventTypeByIdAsync(int eventTypeId);
 
         /// <summary>
-        /// Add nevent type to database asyncronous
+        /// Add nevent type to database
         /// </summary>
         /// <param name="eventType"> The event type model</param>
-        void AddEventTypeAsync(EventTypeModel eventType);
+        void AddEventType(EventTypeModel eventType);
 
         /// <summary>
         /// Update the evenet type from database
@@ -94,10 +94,10 @@ namespace MeetHub.API.Repositories
         }
 
         /// <summary>
-        /// Add nevent type to database asyncronous
+        /// Add nevent type to database
         /// </summary>
         /// <param name="eventType"> The event type model</param>
-        public async void AddEventTypeAsync(EventTypeModel eventType)
+        public async void AddEventType(EventTypeModel eventType)
         {
             try
             {
