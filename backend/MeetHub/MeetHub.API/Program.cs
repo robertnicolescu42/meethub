@@ -47,6 +47,7 @@ builder.Services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
 builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
 builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 #endregion Repositories
 
