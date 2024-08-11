@@ -44,6 +44,7 @@ builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRe
 builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
+builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
 
 #endregion Database action
 
