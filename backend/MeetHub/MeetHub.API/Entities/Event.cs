@@ -99,7 +99,7 @@ namespace MeetHub.API.Entities
         /// <summary>
         /// Gets or sets the is age restricted field for the event class
         /// </summary>
-        public bool MaximumAgeAllowed
+        public int MaximumAgeAllowed
         {
             get;
             set;
