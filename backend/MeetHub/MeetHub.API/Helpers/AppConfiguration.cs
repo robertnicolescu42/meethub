@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace MeetHub.API.Helpers
 {
@@ -9,6 +8,8 @@ namespace MeetHub.API.Helpers
     public static class AppConfiguration
     {
         #region Fields
+
+        private const string cmSettingsFileName = "appsettings.json";
 
         private const string cmEventTableKey = "EventEntity";
         private const string cmUserTableKey = "UserEntityKey";
@@ -32,62 +33,62 @@ namespace MeetHub.API.Helpers
         /// <summary>
         /// Gets the event table name
         /// </summary>
-        public static string EventTableName => GetConfigurationValue(cmEventTableKey);
+        public static string EventTableName => JsonFileRetriever.GetConfigurationValue(cmEventTableKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the user table name
         /// </summary>
-        public static string UserTableName => GetConfigurationValue(cmUserTableKey);
+        public static string UserTableName => JsonFileRetriever.GetConfigurationValue(cmUserTableKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the location table name
         /// </summary>
-        public static string LocationTableName => GetConfigurationValue(cmLocationTableKey);
+        public static string LocationTableName => JsonFileRetriever.GetConfigurationValue(cmLocationTableKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the event type name
         /// </summary>
-        public static string EventTypeTableName => GetConfigurationValue(cmEventTypeKey);
+        public static string EventTypeTableName => JsonFileRetriever.GetConfigurationValue(cmEventTypeKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the event constraint table name
         /// </summary>
-        public static string EventConstraintTableName => GetConfigurationValue(cmEventConstraintTypeKey);
+        public static string EventConstraintTableName => JsonFileRetriever.GetConfigurationValue(cmEventConstraintTypeKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the currency type table name
         /// </summary>
-        public static string CurrencyTypeTableName => GetConfigurationValue(cmCurrencyTypeKey);
+        public static string CurrencyTypeTableName => JsonFileRetriever.GetConfigurationValue(cmCurrencyTypeKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the event thumbnail table name
         /// </summary>
-        public static string EventThumbnailTableName => GetConfigurationValue(cmEventThumbnailKey);
+        public static string EventThumbnailTableName => JsonFileRetriever.GetConfigurationValue(cmEventThumbnailKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the comment table name
         /// </summary>
-        public static string CommentTableName => GetConfigurationValue(cmCommentKey);
+        public static string CommentTableName => JsonFileRetriever.GetConfigurationValue(cmCommentKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the comment reply table name
         /// </summary>
-        public static string CommentReplyTableName => GetConfigurationValue(cmCommentReplyKey);
+        public static string CommentReplyTableName => JsonFileRetriever.GetConfigurationValue(cmCommentReplyKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the user access level table name
         /// </summary>
-        public static string UserAccessLevelTableName => GetConfigurationValue(cmUserAccessLevelKey);
+        public static string UserAccessLevelTableName => JsonFileRetriever.GetConfigurationValue(cmUserAccessLevelKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the user-event relation table name
         /// </summary>
-        public static string UserEventRelationTableName => GetConfigurationValue(cmUserEventRelationKey);
+        public static string UserEventRelationTableName => JsonFileRetriever.GetConfigurationValue(cmUserEventRelationKey, cmSettingsFileName);
 
         /// <summary>
         /// Gets the generated invites table name
         /// </summary>
-        public static string GeneratedInvitesTableName => GetConfigurationValue(cmGeneratedInviteKey);
+        public static string GeneratedInvitesTableName => JsonFileRetriever.GetConfigurationValue(cmGeneratedInviteKey, cmSettingsFileName);
 
         #endregion Table names
 
@@ -98,49 +99,5 @@ namespace MeetHub.API.Helpers
         #endregion Controller names
 
         #endregion Properties
-
-        #region Methods
-
-        /// <summary>
-        /// Get the configured fields from the config file 'appsettings.json'
-        /// </summary>
-        /// <returns></returns>
-        private static JObject GetConfiguration()
-        {
-            JObject config = new JObject();
-            try
-            {
-                using (StreamReader r = new StreamReader("appsettings.json"))
-                {
-                    string json = r.ReadToEnd();
-                    config = (JObject)JsonConvert.DeserializeObject(json);
-                }
-            }
-            catch (JsonException)
-            {
-                // Not implemented. Use logger service to add log
-                throw;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return config;
-        }
-
-        /// <summary>
-        /// Gets the property value from json config
-        /// </summary>
-        /// <param name="fieldKey"> The key of the field </param>
-        /// <returns></returns>
-        private static string GetConfigurationValue(string fieldKey)
-        {
-            var config = GetConfiguration();
-            return config[fieldKey].Value<string>();
-        }
-
-        #endregion Methods
     }
 }
