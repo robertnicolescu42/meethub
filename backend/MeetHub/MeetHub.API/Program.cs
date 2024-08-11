@@ -35,7 +35,7 @@ builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 
 #endregion AutoMapper Profiles
 
-#region Database action
+#region Repositories
 
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
@@ -46,7 +46,7 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
 builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
 
-#endregion Database action
+#endregion Repositories
 
 var app = builder.Build();
 
