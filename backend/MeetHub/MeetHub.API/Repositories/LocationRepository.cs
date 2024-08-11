@@ -63,7 +63,7 @@ namespace MeetHub.API.Repositories
 
         #region Constructor
 
-        public LocationRepository( MeetHubDatabaseContext databaseContext, IMapper mapper)
+        public LocationRepository(MeetHubDatabaseContext databaseContext, IMapper mapper)
         {
             _rmDatabaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
             _rmMapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
