@@ -18,32 +18,32 @@ namespace MeetHub.API.Repositories
         /// Gets all generated invite from database asyncronous
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<LocationModel>> GetAllLocationsAsync();
+        Task<IEnumerable<GeneratedInviteModel>> GetAllGeneratedInvitesAsync();
 
         /// <summary>
         /// Gets generated invite from database asyncronous
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
         /// <returns></returns>
-        Task<LocationModel> GetLocationByIdAsync(int generatedInviteId);
+        Task<GeneratedInviteModel> GetGeneratedInviteByIdAsync(int generatedInviteId);
 
         /// <summary>
         /// Adds generated invite to database
         /// </summary>
         /// <param name="generatedInvite"> The generated invite model </param>
-        void AddLocation(LocationModel generatedInvite);
+        void AddGeneratedInvite(GeneratedInviteModel generatedInvite);
 
         /// <summary>
         /// Updates the generated invite from dataabase
         /// </summary>
         /// <param name="generatedInvite"> The updated generated invite model</param>
-        void UpdateLocation(LocationModel generatedInvite);
+        void UpdateGeneratedInvite(GeneratedInviteModel generatedInvite);
 
         /// <summary>
         /// Removes generated invite from database
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
-        void DeleteLocation(int generatedInviteId);
+        void DeleteGeneratedInvite(int generatedInviteId);
 
         #endregion Methods
     }
@@ -76,10 +76,10 @@ namespace MeetHub.API.Repositories
         /// Gets all generated invites from database asyncronous
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<LocationModel>> GetAllLocationsAsync()
+        public async Task<IEnumerable<GeneratedInviteModel>> GetAllGeneratedInvitesAsync()
         {
-            var generated_invites = await _rmDatabaseContext.Locations.ToListAsync();
-            return _rmMapper.Map<IEnumerable<LocationModel>>(generated_invites);
+            var generated_invites = await _rmDatabaseContext.GeneratedInvites.ToListAsync();
+            return _rmMapper.Map<IEnumerable<GeneratedInviteModel>>(generated_invites);
         }
 
         /// <summary>
@@ -87,22 +87,22 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
         /// <returns></returns>
-        public async Task<LocationModel> GetLocationByIdAsync(int generatedInviteId)
+        public async Task<GeneratedInviteModel> GetGeneratedInviteByIdAsync(int generatedInviteId)
         {
-            var generated_invite = await _rmDatabaseContext.Locations.FirstOrDefaultAsync(generatedInvite => generatedInvite.Id == generatedInviteId);
-            return _rmMapper.Map<LocationModel>(generated_invite);
+            var generated_invite = await _rmDatabaseContext.GeneratedInvites.FirstOrDefaultAsync(generatedInvite => generatedInvite.Id == generatedInviteId);
+            return _rmMapper.Map<GeneratedInviteModel>(generated_invite);
         }
 
         /// <summary>
         /// Adds generated invite to database
         /// </summary>
         /// <param name="generatedInvite"> The generated invite model </param>
-        public async void AddLocation(LocationModel generatedInvite)
+        public async void AddGeneratedInvite(GeneratedInviteModel generatedInvite)
         {
             try
             {
-                var inserting_generated_invite = _rmMapper.Map<Location>(generatedInvite);
-                await _rmDatabaseContext.Locations.AddAsync(inserting_generated_invite);
+                var inserting_generated_invite = _rmMapper.Map<GeneratedInvite>(generatedInvite);
+                await _rmDatabaseContext.GeneratedInvites.AddAsync(inserting_generated_invite);
                 await _rmDatabaseContext.SaveChangesAsync();
 
             }
@@ -116,12 +116,12 @@ namespace MeetHub.API.Repositories
         /// Update the generated invite from dataabase
         /// </summary>
         /// <param name="generatedInvite"> The updated generated invite model</param>
-        public async void UpdateLocation(LocationModel generatedInvite)
+        public async void UpdateGeneratedInvite(GeneratedInviteModel generatedInvite)
         {
             try
             {
-                var updating_generated_invite = _rmMapper.Map<Location>(generatedInvite);
-                _rmDatabaseContext.Locations.Update(updating_generated_invite);
+                var updating_generated_invite = _rmMapper.Map<GeneratedInvite>(generatedInvite);
+                _rmDatabaseContext.GeneratedInvites.Update(updating_generated_invite);
                 await _rmDatabaseContext.SaveChangesAsync();
             }
             catch (SqlException ex)
@@ -134,12 +134,12 @@ namespace MeetHub.API.Repositories
         /// Removes generated invite from database
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
-        public async void DeleteLocation(int generatedInviteId)
+        public async void DeleteGeneratedInvite(int generatedInviteId)
         {
             try
             {
-                var generated_invite = await _rmDatabaseContext.Locations.FirstOrDefaultAsync(loc => loc.Id == generatedInviteId);
-                _rmDatabaseContext.Locations.Remove(generated_invite);
+                var generated_invite = await _rmDatabaseContext.GeneratedInvites.FirstOrDefaultAsync(gi => gi.Id == generatedInviteId);
+                _rmDatabaseContext.GeneratedInvites.Remove(generated_invite);
                 await _rmDatabaseContext.SaveChangesAsync();
             }
             catch (SqlException ex)
