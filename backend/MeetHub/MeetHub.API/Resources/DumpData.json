@@ -1,0 +1,269 @@
+{
+  "Currency": [
+    {
+      "Id": 1,
+      "Code": "RON",
+      "Title": "Romanian Leu",
+      "Description": "Currency used in Romania"
+    },
+    {
+      "Id": 2,
+      "Code": "EUR",
+      "Title": "Euro",
+      "Description": "Currency used in Europa"
+    },
+    {
+      "Id": 3,
+      "Code": "USD",
+      "Title": "Dollar",
+      "Description": "Currency used in America"
+    }
+  ],
+
+  "EventType": [
+    {
+      "Id": 1,
+      "Title": "Car meet",
+      "Description": "A car meet, also known as a car gathering or car show, is an event where car enthusiasts come together to showcase their vehicles, share their passion for cars, and socialize with fellow car enthusiasts."
+    },
+    {
+      "Id": 2,
+      "Title": "Concert",
+      "Description": "A concert is a live music performance in front of an audience."
+    },
+    {
+      "Id": 3,
+      "Title": "Protest",
+      "Description": "A protest is a public act of objection, disapproval or dissent against political advantage."
+    },
+    {
+      "Id": 4,
+      "Title": "Party",
+      "Description": "Fun with other people"
+    }
+  ],
+
+  "EventConstraintType": [
+    {
+      "Id": 1,
+      "Title": "Public",
+      "Description": "Anyone can join",
+    },
+    {
+      "Id": 2,
+      "Title": "Private",
+      "Description": "Need invite to join"
+    },
+    {
+      "Id": 3,
+      "Title": "Paid",
+      "Description": "Anyone who pay can join"
+    }
+  ],
+
+  "Location": [
+    {
+      "Id": 1,
+      "Latitude": "44.8690637",
+      "Longitude": "24.8563707",
+      "LocationName": "Home"
+    },
+    {
+      "Id": 2,
+      "Latitude": "44.846626",
+      "Longitude": "24.868680",
+      "LocationName": "Stadium Nicolae Dobrin"
+    },
+    {
+      "Id": 3,
+      "Latitude": "44.854005",
+      "Longitude": "24.853997",
+      "LocationName": "Trivale forest"
+    }
+  ],
+
+  "EventThumbnail": [
+    {
+      "Id": 1,
+      "Source": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg",
+    },
+    {
+      "Id": 2,
+      "Source": "https://iaia.edu/wp-content/plugins/events-calendar-pro/src/resources/images/tribe-related-events-placeholder.png",
+    }
+  ],
+
+  "UserAccessLevel": [
+    {
+      "Id": 1,
+      "Title": "RegularUser",
+      "Description": "Default access level"
+    },
+    {
+      "Id": 2,
+      "Title": "PowerUser",
+      "Desciption": "User that made donation from at least 20$"
+    },
+    {
+      "Id": 3,
+      "Title": "LegendUser",
+      "Description": "User that made donation from at least 100$"
+    },
+    {
+      "Id": 4,
+      "Title": "Admin",
+      "Description": "System administrator"
+    },
+    {
+      "Id": 5,
+      "Title": "Owner",
+      "Description": "The owner of the system"
+    }
+  ],
+
+  "User": [
+    {
+      "Id": 1,
+      "Username": "R3nudinN0rd",
+      "Email": "remusene69@gmail.com",
+      "PhoneNumber": "+40751862506",
+      "FirstName": "Remus",
+      "LastName": "Ene",
+      "BirthDate": "1999-06-28",
+      "UserAccessLevelId": 5
+    },
+    {
+      "Id": 2,
+      "Username": "R0bEarth",
+      "Email": "robertnicolescu42@gmail.com",
+      "PhoneNumber": "+40771510499",
+      "FirstName": "Robert",
+      "LastName": "Nivolescu",
+      "BirthDate": "1999-06-28",
+      "UserAccessLevelId": 5
+    }
+  ],
+
+  "Event": [
+    {
+      "Id": 1,
+      "Title": "Car meet Pitesti",
+      "Description": "Pitesti car meet 1",
+      "StartDate": "2024-08-21",
+      "EndDate": "2024-08-22",
+      "LocationId": 2,
+      "CreatorId": 1,
+      "EventTypeId": 1,
+      "EventConstraintTypeId": 1,
+      "MaximumAgeAllowed": 60,
+      "MinimumAgeAllowed": 18,
+      "IsAgeRestricted": true,
+      "EnterFee": 0,
+      "CurrencyId": 1,
+      "EventThumbnailId": 1,
+      "MinimumNumberOfParticipants": 0,
+      "MaximumNumberOfParticipants": 100
+    },
+    {
+      "Id": 2,
+      "Title": "Car meet Pitesti",
+      "Description": "Pitesti car meet 2",
+      "StartDate": "2024-08-24",
+      "EndDate": "2024-08-25",
+      "LocationId": 2,
+      "CreatorId": 1,
+      "EventTypeId": 1,
+      "EventConstraintTypeId": 1,
+      "MaximumAgeAllowed": 60,
+      "MinimumAgeAllowed": 18,
+      "IsAgeRestricted": true,
+      "EnterFee": 0,
+      "CurrencyId": 1,
+      "EventThumbnailId": 1,
+      "MinimumNumberOfParticipants": 0,
+      "MaximumNumberOfParticipants": 100
+    },
+    {
+      "Id": 3,
+      "Title": "Car meet Pitesti",
+      "Description": "Pitesti car meet 3",
+      "StartDate": "2024-08-29",
+      "EndDate": "2024-08-28",
+      "LocationId": 2,
+      "CreatorId": 1,
+      "EventTypeId": 1,
+      "EventConstraintTypeId": 1,
+      "MaximumAgeAllowed": 60,
+      "MinimumAgeAllowed": 18,
+      "IsAgeRestricted": true,
+      "EnterFee": 0,
+      "CurrencyId": 1,
+      "EventThumbnailId": 1,
+      "MinimumNumberOfParticipants": 0,
+      "MaximumNumberOfParticipants": 100
+    }
+  ],
+
+  "GeneratedInvite": [
+    {
+      "Id": 1,
+      "UserId": 1,
+      "NumberOfUses": 100,
+      "InviteCode": "ABC123",
+      "EventId": 1,
+      "CreatedAt": "2024-08-11",
+      "ExpireOn": "2024-08-20"
+    },
+    {
+      "Id": 2,
+      "UserId": 2,
+      "NumberOfUses": 100,
+      "InviteCode": "CBA321",
+      "EventId": 1,
+      "CreatedAt": "2024-08-11",
+      "ExpireOn": "2024-08-20"
+    }
+  ],
+
+  "Comment": [
+    {
+      "Id": 1,
+      "EventId": 1,
+      "UserId": 1,
+      "Content": "Comment text 1",
+      "DateAdded": "2024-08-12"
+    },
+    {
+      "Id": 2,
+      "EventId": 1,
+      "UserId": 2,
+      "Content": "Comment text 2",
+      "DateAdded": "2024-08-13"
+    }
+  ],
+
+  "CommentReply": [
+    {
+      "Id": 1,
+      "CommentId": 1,
+      "UserId": 1,
+      "Content": "Comment reply text 1",
+      "DateAdded": "2024-08-20"
+    }
+  ],
+
+  "UserEventRelataion": [
+    {
+      "UserId": 1,
+      "EventId": 1
+    },
+    {
+      "UserId": 1,
+      "EventID": 2
+    },
+    {
+      "UserId": 2,
+      "EventId":  1
+    }
+  ]
+}
