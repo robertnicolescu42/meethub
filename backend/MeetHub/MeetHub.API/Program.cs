@@ -37,16 +37,17 @@ builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 
 #region Repositories
 
-builder.Services.AddScoped<ILocationRepository, LocationRepository>();
-builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
-builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
-builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRepository>();
-builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
-builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
-builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
-builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
+builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
+builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
+builder.Services.AddScoped<IUserEventRelationRepository, UserEventRelationRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 #endregion Repositories
