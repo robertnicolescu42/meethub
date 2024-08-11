@@ -1,5 +1,6 @@
 using MeetHub.API.Context;
 using MeetHub.API.Mappers;
+using MeetHub.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,23 @@ builder.Services.AddAutoMapper(typeof(GeneratedInviteMapper));
 builder.Services.AddAutoMapper(typeof(CurrencyMapper));
 
 #endregion AutoMapper Profiles
+
+#region Repositories
+
+builder.Services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRepository>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
+builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
+builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
+builder.Services.AddScoped<IUserEventRelationRepository, UserEventRelationRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+#endregion Repositories
 
 var app = builder.Build();
 
