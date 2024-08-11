@@ -91,7 +91,7 @@
         /// <summary>
         /// Gets or sets the is age restricted field for the event model class
         /// </summary>
-        public bool MaximumAgeAllowed
+        public int MaximumAgeAllowed
         {
             get;
             set;
