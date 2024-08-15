@@ -9,7 +9,7 @@ namespace MeetHub.API.Helpers
     {
         #region Fields
 
-        private const string cmDumpDataFileName = "DumpData.json";
+        private const string cmDumpDataFileName = "Resources\\DumpData.json";
         private const string cmCurrencyKey = "Currency";
         private const string cmEventTypeKey = "EventType";
         private const string cmEventConstraintTypeKey = "EventConstraintType";
