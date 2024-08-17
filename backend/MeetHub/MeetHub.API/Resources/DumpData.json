@@ -102,7 +102,7 @@
     {
       "Id": 2,
       "Title": "PowerUser",
-      "Desciption": "User that made donation from at least 20$"
+      "Description": "User that made donation from at least 20$"
     },
     {
       "Id": 3,
@@ -152,7 +152,7 @@
       "StartDate": "2024-08-21",
       "EndDate": "2024-08-22",
       "LocationId": 2,
-      "CreatorId": 1,
+      "UserId": 1,
       "EventTypeId": 1,
       "EventConstraintTypeId": 1,
       "MaximumAgeAllowed": 60,
@@ -171,7 +171,7 @@
       "StartDate": "2024-08-24",
       "EndDate": "2024-08-25",
       "LocationId": 2,
-      "CreatorId": 1,
+      "UserId": 1,
       "EventTypeId": 1,
       "EventConstraintTypeId": 1,
       "MaximumAgeAllowed": 60,
@@ -190,7 +190,7 @@
       "StartDate": "2024-08-29",
       "EndDate": "2024-08-28",
       "LocationId": 2,
-      "CreatorId": 1,
+      "UserId": 1,
       "EventTypeId": 1,
       "EventConstraintTypeId": 1,
       "MaximumAgeAllowed": 60,
