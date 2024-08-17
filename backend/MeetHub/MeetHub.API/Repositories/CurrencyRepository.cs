@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes currency from database
         /// </summary>
         /// <param name="currencyId"> The currency id</param>
-        public async void DeleteCurrency(int currencyId)
+        public void DeleteCurrency(int currencyId)
         {
             try
             {
-                var currency = await _rmDatabaseContext.Currencies.FirstOrDefaultAsync(curr => curr.Id == currencyId);
+                var currency = _rmDatabaseContext.Currencies.FirstOrDefault(curr => curr.Id == currencyId);
                 _rmDatabaseContext.Currencies.Remove(currency);
                 _rmDatabaseContext.SaveChanges();
             }

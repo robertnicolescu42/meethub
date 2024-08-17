@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes the event type from database
         /// </summary>
         /// <param name="eventTypeId"></param>
-        public async void DeleteEventType(int eventTypeId)
+        public void DeleteEventType(int eventTypeId)
         {
             try
             {
-                var event_type = await _rmDatabaseContext.EventTypes.FirstOrDefaultAsync(type => type.Id == eventTypeId);
+                var event_type = _rmDatabaseContext.EventTypes.FirstOrDefault(type => type.Id == eventTypeId);
                 _rmDatabaseContext.EventTypes.Remove(event_type);
                 _rmDatabaseContext.SaveChanges();
             }

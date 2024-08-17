@@ -135,11 +135,11 @@ namespace MeetHub.API.Repositories
         /// Removes event from database
         /// </summary>
         /// <param name="eventId"> The event id </param>
-        public async void DeleteEvent(int eventId)
+        public void DeleteEvent(int eventId)
         {
             try
             {
-                Event? event_entry = await _rmDatabaseContext.Events.FirstOrDefaultAsync(e => e.Id == eventId);
+                Event? event_entry = _rmDatabaseContext.Events.FirstOrDefault(e => e.Id == eventId);
                 _rmDatabaseContext.Events.Remove(event_entry);
                 _rmDatabaseContext.SaveChanges();
             }

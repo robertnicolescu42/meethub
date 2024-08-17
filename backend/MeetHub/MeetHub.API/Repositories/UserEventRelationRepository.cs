@@ -152,11 +152,11 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="userId"> The user id </param>
         /// <param name="eventId"> The event id </param>
-        public async void DeleteUSerEventRelation(int userId, int eventId)
+        public void DeleteUSerEventRelation(int userId, int eventId)
         {
             try
             {
-                var relation = await _rmDatabaseContext.UserEventRelations.FirstOrDefaultAsync(rel => rel.UserId == userId && rel.EventId == eventId);
+                var relation = _rmDatabaseContext.UserEventRelations.FirstOrDefault(rel => rel.UserId == userId && rel.EventId == eventId);
                 _rmDatabaseContext.UserEventRelations.Remove(relation);
                 _rmDatabaseContext.SaveChanges();
             }

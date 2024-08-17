@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes generated invite from database
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
-        public async void DeleteGeneratedInvite(int generatedInviteId)
+        public void DeleteGeneratedInvite(int generatedInviteId)
         {
             try
             {
-                var generated_invite = await _rmDatabaseContext.GeneratedInvites.FirstOrDefaultAsync(gi => gi.Id == generatedInviteId);
+                var generated_invite = _rmDatabaseContext.GeneratedInvites.FirstOrDefault(gi => gi.Id == generatedInviteId);
                 _rmDatabaseContext.GeneratedInvites.Remove(generated_invite);
                 _rmDatabaseContext.SaveChanges();
             }

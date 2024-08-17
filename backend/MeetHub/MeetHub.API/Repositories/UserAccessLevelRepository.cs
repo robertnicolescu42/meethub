@@ -135,11 +135,11 @@ namespace MeetHub.API.Repositories
         /// Removes user access level from database
         /// </summary>
         /// <param name="userAccessLevelId"> The user access level id </param>
-        public async void DeleteUserAccessLevel(int userAccessLevelId)
+        public void DeleteUserAccessLevel(int userAccessLevelId)
         {
             try
             {
-                var user_access_level = await _rmDatabaseContext.UserAccessLevels.FirstOrDefaultAsync(ual => ual.Id == userAccessLevelId);
+                var user_access_level = _rmDatabaseContext.UserAccessLevels.FirstOrDefault(ual => ual.Id == userAccessLevelId);
                 _rmDatabaseContext.UserAccessLevels.Remove(user_access_level);
                 _rmDatabaseContext.SaveChanges();
             }

@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes comment reply from database
         /// </summary>
         /// <param name="commentReplyId"> The comment reply id </param>
-        public async void DeleteCommentReply(int commentReplyId)
+        public void DeleteCommentReply(int commentReplyId)
         {
             try
             {
-                var comment_reply = await _rmDatabaseContext.CommentReplies.FirstOrDefaultAsync(cr => cr.Id == commentReplyId);
+                var comment_reply = _rmDatabaseContext.CommentReplies.FirstOrDefault(cr => cr.Id == commentReplyId);
                 _rmDatabaseContext.CommentReplies.Remove(comment_reply);
                 _rmDatabaseContext.SaveChanges();
             }

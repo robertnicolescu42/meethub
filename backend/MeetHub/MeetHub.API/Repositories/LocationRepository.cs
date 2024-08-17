@@ -135,11 +135,11 @@ namespace MeetHub.API.Repositories
         /// Removes location from database
         /// </summary>
         /// <param name="locationId"> The location id </param>
-        public async void DeleteLocation(int locationId)
+        public void DeleteLocation(int locationId)
         {
             try
             {
-                var location = await _rmDatabaseContext.Locations.FirstOrDefaultAsync(loc => loc.Id == locationId);
+                var location = _rmDatabaseContext.Locations.FirstOrDefault(loc => loc.Id == locationId);
                 _rmDatabaseContext.Locations.Remove(location);
                 _rmDatabaseContext.SaveChanges();
             }

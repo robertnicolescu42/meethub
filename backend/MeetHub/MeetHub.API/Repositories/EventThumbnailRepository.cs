@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes event thumbnail from database
         /// </summary>
         /// <param name="eventThumbnailId"> The event thumbnail id </param>
-        public async void DeleteEventThumbnail(int eventThumbnailId)
+        public void DeleteEventThumbnail(int eventThumbnailId)
         {
             try
             {
-                var event_thumbnail = await _rmDatabaseContext.EventThumbnails.FirstOrDefaultAsync(t => t.Id == eventThumbnailId);
+                var event_thumbnail = _rmDatabaseContext.EventThumbnails.FirstOrDefault(t => t.Id == eventThumbnailId);
                 _rmDatabaseContext.EventThumbnails.Remove(event_thumbnail);
                 _rmDatabaseContext.SaveChanges();
             }

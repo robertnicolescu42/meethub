@@ -134,11 +134,11 @@ namespace MeetHub.API.Repositories
         /// Removes event constraint type from database
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
-        public async void DeleteEventConstraintType(int eventConstraintTypeId)
+        public void DeleteEventConstraintType(int eventConstraintTypeId)
         {
             try
             {
-                var event_constraint_type = await _rmDatabaseContext.EventConstraintTypes.FirstOrDefaultAsync(loc => loc.Id == eventConstraintTypeId);
+                var event_constraint_type = _rmDatabaseContext.EventConstraintTypes.FirstOrDefault(loc => loc.Id == eventConstraintTypeId);
                 _rmDatabaseContext.EventConstraintTypes.Remove(event_constraint_type);
                 _rmDatabaseContext.SaveChanges();
             }

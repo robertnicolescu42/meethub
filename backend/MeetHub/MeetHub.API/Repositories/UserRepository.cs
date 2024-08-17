@@ -135,11 +135,11 @@ namespace MeetHub.API.Repositories
         /// Removes user from database
         /// </summary>
         /// <param name="userId"> The user id </param>
-        public async void DeleteUser(int userId)
+        public void DeleteUser(int userId)
         {
             try
             {
-                var user = await _rmDatabaseContext.Users.FirstOrDefaultAsync(loc => loc.Id == userId);
+                var user = _rmDatabaseContext.Users.FirstOrDefault(loc => loc.Id == userId);
                 _rmDatabaseContext.Users.Remove(user);
                 _rmDatabaseContext.SaveChanges();
             }
