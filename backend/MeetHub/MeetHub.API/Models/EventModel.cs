@@ -64,7 +64,7 @@
         /// <summary>
         /// Gets or sets the creator Id field for the event model class
         /// </summary>
-        public int CreatorId
+        public int UserId
         {
             get;
             set;

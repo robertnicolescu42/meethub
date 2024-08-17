@@ -236,7 +236,7 @@ namespace MeetHub.API.Context
         {
             CreateManyToManyTableRelations(ref modelBuilder);
             CreateSpecialCasesConstraints(ref modelBuilder);
-            //AddDumpData(ref modelBuilder);
+            AddDumpData(ref modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
 

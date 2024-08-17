@@ -70,7 +70,7 @@ namespace MeetHub.API.Entities
         /// Gets or sets the creator Id field for the event class
         /// </summary>
         [Required(ErrorMessage = Constants.cmRequiredErrorMessage)]
-        public int CreatorId
+        public int UserId
         {
             get;
             set;
