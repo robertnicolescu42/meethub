@@ -60,9 +60,16 @@ namespace MeetHub.API.Helpers
         public static List<T> GetConfigurationObjectValue<T>(string fieldKey, string configFileName)
         {
             var config = JsonFileRetriever.GetConfiguration(configFileName);
-            var objects = config[fieldKey].Value<List<object>>();
-            return objects.Cast<T>().ToList();
+            var jsonArray = config[fieldKey] as JArray; // Explicitly cast to JArray
+
+            if (jsonArray == null || jsonArray.Count == 0)
+            {
+                return new List<T>(); // Handle empty or null array
+            }
+
+            return jsonArray.ToObject<List<T>>();
         }
+
         #endregion Methods
     }
 }
