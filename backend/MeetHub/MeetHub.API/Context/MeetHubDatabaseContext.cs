@@ -1,4 +1,5 @@
 ﻿using MeetHub.API.Entities;
+using MeetHub.API.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeetHub.API.Context
@@ -9,7 +10,6 @@ namespace MeetHub.API.Context
 
         public MeetHubDatabaseContext(DbContextOptions<MeetHubDatabaseContext> options) : base(options)
         {
-            
         }
 
         #endregion Constructor
@@ -141,13 +141,44 @@ namespace MeetHub.API.Context
                 .HasOne(relation => relation.User)
                 .WithMany(user => user.Relations)
                 .HasForeignKey(relation => relation.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<UserEventRelation>()
                 .HasOne(relation => relation.Event)
                 .WithMany(ev => ev.Relations)
                 .HasForeignKey(relation => relation.EventId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
+        }
+
+        /// <summary>
+        /// Creates the constraints for circular table relations
+        /// </summary>
+        /// <param name="modelBuilder"> The model builder that will create the database structure </param>
+        private void CreateSpecialCasesConstraints(ref ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(com => com.User)
+                .WithMany(user => user.Comments)
+                .HasForeignKey(com => com.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(com => com.Event)
+                .WithMany(user => user.Comments)
+                .HasForeignKey(com => com.EventId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<GeneratedInvite>()
+                .HasOne(gi => gi.User)
+                .WithMany(user => user.GeneratedInvites)
+                .HasForeignKey(gi => gi.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<GeneratedInvite>()
+                .HasOne(gi => gi.Event)
+                .WithMany(ev => ev.GeneratedInvites)
+                .HasForeignKey(gi => gi.EventId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
 
         /// <summary>
@@ -156,7 +187,41 @@ namespace MeetHub.API.Context
         /// <param name="modelBuilder">  The model builder that will create the database structure </param>
         private void AddDumpData(ref ModelBuilder modelBuilder)
         {
-            // TODO: Add json with dump data and populate the table for first migration
+            modelBuilder.Entity<Location>()
+                .HasData(DumpDataConfiguration.Locations.ToArray());
+
+            modelBuilder.Entity<EventType>()
+                .HasData(DumpDataConfiguration.EventTypes.ToArray());
+
+            modelBuilder.Entity<EventThumbnail>()
+                .HasData(DumpDataConfiguration.EventThumbnails.ToArray());
+
+            modelBuilder.Entity<EventConstraintType>()
+                .HasData(DumpDataConfiguration.EventConstraintTypes.ToArray());
+
+            modelBuilder.Entity<Currency>()
+                .HasData(DumpDataConfiguration.Currencies.ToArray());
+
+            modelBuilder.Entity<UserAccessLevel>()
+                .HasData(DumpDataConfiguration.UserAccessLevels.ToArray());
+
+            modelBuilder.Entity<User>()
+                .HasData(DumpDataConfiguration.Users.ToArray());
+
+            modelBuilder.Entity<Event>()
+                .HasData(DumpDataConfiguration.Events.ToArray());
+
+            modelBuilder.Entity<Comment>()
+                .HasData(DumpDataConfiguration.Comments.ToArray());
+
+            modelBuilder.Entity<CommentReply>()
+                .HasData(DumpDataConfiguration.CommentReplies.ToArray());
+
+            modelBuilder.Entity<GeneratedInvite>()
+                .HasData(DumpDataConfiguration.GeneratedInvites.ToArray());
+
+            modelBuilder.Entity<UserEventRelation>()
+                .HasData(DumpDataConfiguration.UserEventRelations.ToArray());
         }
 
         #endregion Methods
@@ -170,7 +235,8 @@ namespace MeetHub.API.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CreateManyToManyTableRelations(ref modelBuilder);
-            AddDumpData(ref modelBuilder);
+            CreateSpecialCasesConstraints(ref modelBuilder);
+            //AddDumpData(ref modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
 
