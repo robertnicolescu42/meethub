@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/event-type",
+      "controller": "EventType",
+      "action": "GetAllEventTypes"
+    },
+    {
+      "template": "api/event-type/{id}",
+      "controller": "EventType",
+      "action": "GetEventType"
+    },
+    {
+      "template": "api/event-type",
+      "controller": "EventType",
+      "action": "AddEventType"
+    },
+    {
+      "template": "api/event-type/{id}",
+      "controller": "EventType",
+      "action": "UpdateEventType"
+    },
+    {
+      "template": "api/event-type/{id}",
+      "controller": "EventType",
+      "action": "DeleteEventType"
+    }
+  ]
+}

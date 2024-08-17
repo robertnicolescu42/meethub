@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/event-thumbnail",
+      "controller": "EventThumbnail",
+      "action": "GetAllEventThumbnails"
+    },
+    {
+      "template": "api/event-thumbnail/{id}",
+      "controller": "EventThumbnail",
+      "action": "GetEventThumbnail"
+    },
+    {
+      "template": "api/event-thumbnail",
+      "controller": "EventThumbnail",
+      "action": "AddEventThumbnail"
+    },
+    {
+      "template": "api/event-thumbnail/{id}",
+      "controller": "EventThumbnail",
+      "action": "UpdateEventThumbnail"
+    },
+    {
+      "template": "api/event-thumbnail/{id}",
+      "controller": "EventThumbnail",
+      "action": "DeleteEventThumbnail"
+    }
+  ]
+}
