@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds currency to database
         /// </summary>
         /// <param name="currency"> The currency model </param>
-        public async void AddCurrency(CurrencyModel currency)
+        public void AddCurrency(CurrencyModel currency)
         {
             try
             {
                 var inserting_currency = _rmMapper.Map<Currency>(currency);
-                await _rmDatabaseContext.Currencies.AddAsync(inserting_currency);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.Currencies.Add(inserting_currency);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Updates the currency from dataabase
         /// </summary>
         /// <param name="currency"> The updated currency model</param>
-        public async void UpdateCurrency(CurrencyModel currency)
+        public void UpdateCurrency(CurrencyModel currency)
         {
             try
             {
                 var updating_currency = _rmMapper.Map<Currency>(currency);
                 _rmDatabaseContext.Currencies.Update(updating_currency);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -140,7 +140,7 @@ namespace MeetHub.API.Repositories
             {
                 var currency = await _rmDatabaseContext.Currencies.FirstOrDefaultAsync(curr => curr.Id == currencyId);
                 _rmDatabaseContext.Currencies.Remove(currency);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

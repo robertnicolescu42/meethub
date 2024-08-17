@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds event thumbnail to database
         /// </summary>
         /// <param name="thumbnail"> The event thumbnail model </param>
-        public async void AddEventThumbnail(EventThumbnailModel thumbnail)
+        public void AddEventThumbnail(EventThumbnailModel thumbnail)
         {
             try
             {
                 var inserting_thumbnail = _rmMapper.Map<EventThumbnail>(thumbnail);
-                await _rmDatabaseContext.EventThumbnails.AddAsync(inserting_thumbnail);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.EventThumbnails.Add(inserting_thumbnail);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Updates the event thumbnail from dataabase
         /// </summary>
         /// <param name="thumbnail"> The updated event thumbnail model</param>
-        public async void UpdateEventThumbnail(EventThumbnailModel thumbnail)
+        public void UpdateEventThumbnail(EventThumbnailModel thumbnail)
         {
             try
             {
                 var updating_thumbnail = _rmMapper.Map<EventThumbnail>(thumbnail);
                 _rmDatabaseContext.EventThumbnails.Update(updating_thumbnail);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -140,7 +140,7 @@ namespace MeetHub.API.Repositories
             {
                 var event_thumbnail = await _rmDatabaseContext.EventThumbnails.FirstOrDefaultAsync(t => t.Id == eventThumbnailId);
                 _rmDatabaseContext.EventThumbnails.Remove(event_thumbnail);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

@@ -103,8 +103,8 @@ namespace MeetHub.API.Repositories
             try
             {
                 var inserting_event = _rmMapper.Map<Event>(eventModel);
-                await _rmDatabaseContext.Events.AddAsync(inserting_event);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.Events.Add(inserting_event);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -117,13 +117,13 @@ namespace MeetHub.API.Repositories
         /// Update the event from dataabase
         /// </summary>
         /// <param name="eventModel"> The updated event model</param>
-        public async void UpdateEvent(EventModel eventModel)
+        public void UpdateEvent(EventModel eventModel)
         {
             try
             {
                 var updating_event = _rmMapper.Map<Event>(eventModel);
                 _rmDatabaseContext.Events.Update(updating_event);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -141,7 +141,7 @@ namespace MeetHub.API.Repositories
             {
                 Event? event_entry = await _rmDatabaseContext.Events.FirstOrDefaultAsync(e => e.Id == eventId);
                 _rmDatabaseContext.Events.Remove(event_entry);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

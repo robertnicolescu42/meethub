@@ -98,13 +98,13 @@ namespace MeetHub.API.Repositories
         /// Adds user access level to database
         /// </summary>
         /// <param name="user access level"> The user access level model </param>
-        public async void AddUserAccessLevel(UserAccessLevelModel userAccessLevel)
+        public void AddUserAccessLevel(UserAccessLevelModel userAccessLevel)
         {
             try
             {
                 var inserting_user_access_level = _rmMapper.Map<UserAccessLevel>(userAccessLevel);
-                await _rmDatabaseContext.UserAccessLevels.AddAsync(inserting_user_access_level);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.UserAccessLevels.Add(inserting_user_access_level);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -117,13 +117,13 @@ namespace MeetHub.API.Repositories
         /// Update the user access level from dataabase
         /// </summary>
         /// <param name="userAccessLevel"> The updated user access level model</param>
-        public async void UpdateUserAccessLevel(UserAccessLevelModel userAccessLevel)
+        public void UpdateUserAccessLevel(UserAccessLevelModel userAccessLevel)
         {
             try
             {
                 var updating_user_access_level = _rmMapper.Map<UserAccessLevel>(userAccessLevel);
                 _rmDatabaseContext.UserAccessLevels.Update(updating_user_access_level);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -141,7 +141,7 @@ namespace MeetHub.API.Repositories
             {
                 var user_access_level = await _rmDatabaseContext.UserAccessLevels.FirstOrDefaultAsync(ual => ual.Id == userAccessLevelId);
                 _rmDatabaseContext.UserAccessLevels.Remove(user_access_level);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

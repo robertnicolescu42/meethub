@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds event constraint type to database
         /// </summary>
         /// <param name="eventConstraintType"> The event constraint type model </param>
-        public async void AddEventConstraintType(EventConstraintTypeModel eventConstraintType)
+        public void AddEventConstraintType(EventConstraintTypeModel eventConstraintType)
         {
             try
             {
                 var inserting_event_constraint_type = _rmMapper.Map<EventConstraintType>(eventConstraintType);
-                await _rmDatabaseContext.EventConstraintTypes.AddAsync(inserting_event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.EventConstraintTypes.Add(inserting_event_constraint_type);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Updates the event constraint type from dataabase
         /// </summary>
         /// <param name="eventConstraintType"> The event constraint type model </param>
-        public async void UpdateEventConstraintType(EventConstraintTypeModel eventConstraintType)
+        public void UpdateEventConstraintType(EventConstraintTypeModel eventConstraintType)
         {
             try
             {
                 var updating_event_constraint_type = _rmMapper.Map<EventConstraintType>(eventConstraintType);
                 _rmDatabaseContext.EventConstraintTypes.Update(updating_event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -140,7 +140,7 @@ namespace MeetHub.API.Repositories
             {
                 var event_constraint_type = await _rmDatabaseContext.EventConstraintTypes.FirstOrDefaultAsync(loc => loc.Id == eventConstraintTypeId);
                 _rmDatabaseContext.EventConstraintTypes.Remove(event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Add nevent type to database
         /// </summary>
         /// <param name="eventType"> The event type model</param>
-        public async void AddEventType(EventTypeModel eventType)
+        public void AddEventType(EventTypeModel eventType)
         {
             try
             {
                 var inserting_event_type = _rmMapper.Map<EventType>(eventType);
-                await _rmDatabaseContext.EventTypes.AddAsync(inserting_event_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.EventTypes.Add(inserting_event_type);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Update the evenet type from database
         /// </summary>
         /// <param name="eventType"></param>
-        public async void UpdateEventType(EventTypeModel eventType)
+        public void UpdateEventType(EventTypeModel eventType)
         {
             try
             {
                 var updating_event_type = _rmMapper.Map<EventType>(eventType);
                 _rmDatabaseContext.EventTypes.Update(updating_event_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -140,7 +140,7 @@ namespace MeetHub.API.Repositories
             {
                 var event_type = await _rmDatabaseContext.EventTypes.FirstOrDefaultAsync(type => type.Id == eventTypeId);
                 _rmDatabaseContext.EventTypes.Remove(event_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
