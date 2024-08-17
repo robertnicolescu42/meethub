@@ -1,6 +1,6 @@
 ﻿using MeetHub.API.Entities;
 
-namespace MeetHub.API.Helpers
+namespace MeetHub.API.Helpers.ConfigurationHelpers
 {
     /// <summary>
     /// Dump data retriever class
