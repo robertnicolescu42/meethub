@@ -99,7 +99,7 @@ namespace MeetHub.API.Entities
         /// <summary>
         /// Gets or sets the is age restricted field for the event class
         /// </summary>
-        public bool MaximumAgeAllowed
+        public int MaximumAgeAllowed
         {
             get;
             set;
@@ -235,6 +235,15 @@ namespace MeetHub.API.Entities
         /// Gets or sets the generated invites navigation property for event class
         /// </summary>
         public List<GeneratedInvite> GeneratedInvites
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the comments navigation property for event class
+        /// </summary>
+        public List<Comment> Comments
         {
             get;
             set;

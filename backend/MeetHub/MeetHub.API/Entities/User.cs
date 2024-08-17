@@ -124,6 +124,15 @@ namespace MeetHub.API.Entities
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the comments navigation property for user class
+        /// </summary>
+        public List<Comment> Comments
+        {
+            get;
+            set;
+        }
+
         #endregion Properties
     }
 }
