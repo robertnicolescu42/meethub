@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 #region Database conenction
 
-builder.Services.AddDbContext<MeetHubDatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+builder.Services.AddDbContext<MeetHubDatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnectionString")));
 
 #endregion Database connection
 
