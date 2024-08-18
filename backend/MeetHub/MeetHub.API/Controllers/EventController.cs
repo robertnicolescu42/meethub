@@ -1,7 +1,6 @@
 ﻿using MeetHub.API.Models;
 using MeetHub.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
 
 namespace MeetHub.API.Controllers
 {
