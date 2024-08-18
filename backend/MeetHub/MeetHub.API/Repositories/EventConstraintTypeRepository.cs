@@ -18,14 +18,14 @@ namespace MeetHub.API.Repositories
         /// Gets event contraint types from database asyncronous
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstrintTypesAsync();
+        Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstraintTypesAsync();
 
         /// <summary>
         /// Gets event constraint type from database asyncronous
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
         /// <returns></returns>
-        Task<EventConstraintTypeModel> GetEventConstrintTypeByIdAsync(int eventConstraintTypeId);
+        Task<EventConstraintTypeModel> GetEventConstraintTypeByIdAsync(int eventConstraintTypeId);
 
         /// <summary>
         /// Adds event constraint type to database
@@ -76,7 +76,7 @@ namespace MeetHub.API.Repositories
         /// Gets event contraint types from database asyncronous
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstrintTypesAsync()
+        public async Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstraintTypesAsync()
         {
             var event_constraint_types = await _rmDatabaseContext.EventConstraintTypes.ToListAsync();
             return _rmMapper.Map<IEnumerable<EventConstraintTypeModel>>(event_constraint_types);
@@ -87,7 +87,7 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
         /// <returns></returns>
-        public async Task<EventConstraintTypeModel> GetEventConstrintTypeByIdAsync(int eventConstraintTypeId)
+        public async Task<EventConstraintTypeModel> GetEventConstraintTypeByIdAsync(int eventConstraintTypeId)
         {
             var event_constrint_type = await _rmDatabaseContext.EventConstraintTypes.FirstOrDefaultAsync(type => type.Id == eventConstraintTypeId);
             return _rmMapper.Map<EventConstraintTypeModel>(event_constrint_type);
