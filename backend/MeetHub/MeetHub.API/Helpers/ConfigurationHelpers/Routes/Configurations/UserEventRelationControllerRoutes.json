@@ -3,27 +3,32 @@
     {
       "template": "api/user-event-relation",
       "controller": "UserEventRelation",
-      "action": "GetAllUserEventRelations"
+      "action": "GetAllRelations"
     },
     {
-      "template": "api/user-event-relation/{id}",
+      "template": "api/user-event-relation/user/{id}",
       "controller": "UserEventRelation",
-      "action": "GetUser"
+      "action": "GetRelationByUserId"
+    },
+    {
+      "template": "api/user-event-relation/event/{id}",
+      "controller": "UserEventRelation",
+      "action": "GetRelationByEventId"
+    },
+    {
+      "template": "api/user-event-relation/user/{userId}/event/{eventId}",
+      "controller": "UserEventRelation",
+      "action": "GetUserEventRelation"
     },
     {
       "template": "api/user-event-relation",
       "controller": "UserEventRelation",
-      "action": "AddUser"
+      "action": "AddRelation"
     },
     {
-      "template": "api/user-event-relation/{id}",
+      "template": "api/user-event-relation/user/{userId}/event/{eventId}",
       "controller": "UserEventRelation",
-      "action": "UpdateUser"
-    },
-    {
-      "template": "api/user-event-relation/{id}",
-      "controller": "UserEventRelation",
-      "action": "DeleteUser"
+      "action": "DeleteRelation"
     }
   ]
 }
