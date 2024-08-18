@@ -10,7 +10,7 @@ namespace MeetHub.API.Repositories
     /// <summary>
     /// The generated invite repository interface
     /// </summary>
-    public interface IGeneratedInvitesRepository
+    public interface IGeneratedInviteRepository
     {
         #region Methods
 
@@ -51,7 +51,7 @@ namespace MeetHub.API.Repositories
     /// <summary>
     /// The generated invite repository implementation class
     /// </summary>
-    public class GeneratedInvitesRepository : IGeneratedInvitesRepository
+    public class GeneratedInviteRepository : IGeneratedInviteRepository
     {
         #region Fields
 
@@ -62,7 +62,7 @@ namespace MeetHub.API.Repositories
 
         #region Constructor
 
-        public GeneratedInvitesRepository(MeetHubDatabaseContext databaseContext, IMapper mapper)
+        public GeneratedInviteRepository(MeetHubDatabaseContext databaseContext, IMapper mapper)
         {
             _rmDatabaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
             _rmMapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
