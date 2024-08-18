@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MeetHub.API.Controllers
 {
     /// <summary>
-    /// The controller for eventType actions
+    /// The controller for event type actions
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
@@ -30,7 +30,7 @@ namespace MeetHub.API.Controllers
         #region Methods
 
         /// <summary>
-        /// Gets all eventTypes from repository
+        /// Gets all event types from repository
         /// </summary>
         /// <returns></returns>
         [HttpGet, HttpHead]
@@ -45,7 +45,7 @@ namespace MeetHub.API.Controllers
         }
 
         /// <summary>
-        /// Gets a specific eventType using id
+        /// Gets a specific event type using id
         /// </summary>
         /// <param name="id"> The id of the eventType </param>
         /// <returns></returns>
@@ -63,7 +63,7 @@ namespace MeetHub.API.Controllers
         /// <summary>
         /// Adds new eventType
         /// </summary>
-        /// <param name="eventType"> The eventType model </param>
+        /// <param name="eventType"> The event type model </param>
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> AddEventType(EventTypeModel eventType)
@@ -73,9 +73,9 @@ namespace MeetHub.API.Controllers
         }
 
         /// <summary>
-        /// Updates an existing eventType
+        /// Updates an existing event type
         /// </summary>
-        /// <param name="eventType"> The updated eventType model </param>
+        /// <param name="eventType"> The updated event type model </param>
         /// <returns></returns>
         [HttpPut]
         public async Task<IActionResult> UpdateEventType(EventTypeModel eventType)
@@ -85,9 +85,9 @@ namespace MeetHub.API.Controllers
         }
 
         /// <summary>
-        /// Deletes an existion eventType
+        /// Deletes an existion event type
         /// </summary>
-        /// <param name="id"> The eventType id </param>
+        /// <param name="id"> The event type id </param>
         /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEventType(int id)
