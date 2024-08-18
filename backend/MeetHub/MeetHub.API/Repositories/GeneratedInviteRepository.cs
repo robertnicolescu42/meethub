@@ -10,7 +10,7 @@ namespace MeetHub.API.Repositories
     /// <summary>
     /// The generated invite repository interface
     /// </summary>
-    public interface IGeneratedInvitesRepository
+    public interface IGeneratedInviteRepository
     {
         #region Methods
 
@@ -51,7 +51,7 @@ namespace MeetHub.API.Repositories
     /// <summary>
     /// The generated invite repository implementation class
     /// </summary>
-    public class GeneratedInvitesRepository : IGeneratedInvitesRepository
+    public class GeneratedInviteRepository : IGeneratedInviteRepository
     {
         #region Fields
 
@@ -62,7 +62,7 @@ namespace MeetHub.API.Repositories
 
         #region Constructor
 
-        public GeneratedInvitesRepository(MeetHubDatabaseContext databaseContext, IMapper mapper)
+        public GeneratedInviteRepository(MeetHubDatabaseContext databaseContext, IMapper mapper)
         {
             _rmDatabaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
             _rmMapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds generated invite to database
         /// </summary>
         /// <param name="generatedInvite"> The generated invite model </param>
-        public async void AddGeneratedInvite(GeneratedInviteModel generatedInvite)
+        public void AddGeneratedInvite(GeneratedInviteModel generatedInvite)
         {
             try
             {
                 var inserting_generated_invite = _rmMapper.Map<GeneratedInvite>(generatedInvite);
-                await _rmDatabaseContext.GeneratedInvites.AddAsync(inserting_generated_invite);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.GeneratedInvites.Add(inserting_generated_invite);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Update the generated invite from dataabase
         /// </summary>
         /// <param name="generatedInvite"> The updated generated invite model</param>
-        public async void UpdateGeneratedInvite(GeneratedInviteModel generatedInvite)
+        public void UpdateGeneratedInvite(GeneratedInviteModel generatedInvite)
         {
             try
             {
                 var updating_generated_invite = _rmMapper.Map<GeneratedInvite>(generatedInvite);
                 _rmDatabaseContext.GeneratedInvites.Update(updating_generated_invite);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -134,13 +134,13 @@ namespace MeetHub.API.Repositories
         /// Removes generated invite from database
         /// </summary>
         /// <param name="generatedInviteId"> The generated invite id </param>
-        public async void DeleteGeneratedInvite(int generatedInviteId)
+        public void DeleteGeneratedInvite(int generatedInviteId)
         {
             try
             {
-                var generated_invite = await _rmDatabaseContext.GeneratedInvites.FirstOrDefaultAsync(gi => gi.Id == generatedInviteId);
+                var generated_invite = _rmDatabaseContext.GeneratedInvites.FirstOrDefault(gi => gi.Id == generatedInviteId);
                 _rmDatabaseContext.GeneratedInvites.Remove(generated_invite);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds comment to database
         /// </summary>
         /// <param name="comment"> The comment model </param>
-        public async void AddComment(CommentModel comment)
+        public void AddComment(CommentModel comment)
         {
             try
             {
                 var inserting_comment = _rmMapper.Map<Comment>(comment);
-                await _rmDatabaseContext.Comments.AddAsync(inserting_comment);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.Comments.Add(inserting_comment);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Updates the comment from dataabase
         /// </summary>
         /// <param name="comment"> The updated comment model</param>
-        public async void UpdateComment(CommentModel comment)
+        public void UpdateComment(CommentModel comment)
         {
             try
             {
                 var updating_comment = _rmMapper.Map<Comment>(comment);
                 _rmDatabaseContext.Comments.Update(updating_comment);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -134,13 +134,13 @@ namespace MeetHub.API.Repositories
         /// Removes comment from database
         /// </summary>
         /// <param name="commentId"> The comment id </param>
-        public async void DeleteComment(int commentId)
+        public void DeleteComment(int commentId)
         {
             try
             {
-                var comment = await _rmDatabaseContext.Comments.FirstOrDefaultAsync(c => c.Id == commentId);
+                var comment = _rmDatabaseContext.Comments.FirstOrDefault(c => c.Id == commentId);
                 _rmDatabaseContext.Comments.Remove(comment);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

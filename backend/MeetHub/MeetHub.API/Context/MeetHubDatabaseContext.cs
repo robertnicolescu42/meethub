@@ -1,5 +1,5 @@
 ﻿using MeetHub.API.Entities;
-using MeetHub.API.Helpers;
+using MeetHub.API.Helpers.ConfigurationHelpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeetHub.API.Context

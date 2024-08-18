@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/comment-reply",
+      "controller": "CommentReply",
+      "action": "GetAllCommentReplies"
+    },
+    {
+      "template": "api/comment-reply/{id}",
+      "controller": "CommentReply",
+      "action": "GetCommentReply"
+    },
+    {
+      "template": "api/comment-reply",
+      "controller": "CommentReply",
+      "action": "AddCommentReply"
+    },
+    {
+      "template": "api/comment-reply/{id}",
+      "controller": "CommentReply",
+      "action": "UpdateCommentReply"
+    },
+    {
+      "template": "api/comment-reply/{id}",
+      "controller": "CommentReply",
+      "action": "DeleteCommentReply"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/location",
+      "controller": "Location",
+      "action": "GetAllLocations"
+    },
+    {
+      "template": "api/location/{id}",
+      "controller": "Location",
+      "action": "GetLocation"
+    },
+    {
+      "template": "api/location",
+      "controller": "location",
+      "action": "AddLocation"
+    },
+    {
+      "template": "api/location/{id}",
+      "controller": "location",
+      "action": "UpdateLocation"
+    },
+    {
+      "template": "api/location/{id}",
+      "controller": "location",
+      "action": "DeleteLocation"
+    }
+  ]
+}

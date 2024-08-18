@@ -18,14 +18,14 @@ namespace MeetHub.API.Repositories
         /// Gets event contraint types from database asyncronous
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstrintTypesAsync();
+        Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstraintTypesAsync();
 
         /// <summary>
         /// Gets event constraint type from database asyncronous
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
         /// <returns></returns>
-        Task<EventConstraintTypeModel> GetEventConstrintTypeByIdAsync(int eventConstraintTypeId);
+        Task<EventConstraintTypeModel> GetEventConstraintTypeByIdAsync(int eventConstraintTypeId);
 
         /// <summary>
         /// Adds event constraint type to database
@@ -76,7 +76,7 @@ namespace MeetHub.API.Repositories
         /// Gets event contraint types from database asyncronous
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstrintTypesAsync()
+        public async Task<IEnumerable<EventConstraintTypeModel>> GetAllEventConstraintTypesAsync()
         {
             var event_constraint_types = await _rmDatabaseContext.EventConstraintTypes.ToListAsync();
             return _rmMapper.Map<IEnumerable<EventConstraintTypeModel>>(event_constraint_types);
@@ -87,7 +87,7 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
         /// <returns></returns>
-        public async Task<EventConstraintTypeModel> GetEventConstrintTypeByIdAsync(int eventConstraintTypeId)
+        public async Task<EventConstraintTypeModel> GetEventConstraintTypeByIdAsync(int eventConstraintTypeId)
         {
             var event_constrint_type = await _rmDatabaseContext.EventConstraintTypes.FirstOrDefaultAsync(type => type.Id == eventConstraintTypeId);
             return _rmMapper.Map<EventConstraintTypeModel>(event_constrint_type);
@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds event constraint type to database
         /// </summary>
         /// <param name="eventConstraintType"> The event constraint type model </param>
-        public async void AddEventConstraintType(EventConstraintTypeModel eventConstraintType)
+        public void AddEventConstraintType(EventConstraintTypeModel eventConstraintType)
         {
             try
             {
                 var inserting_event_constraint_type = _rmMapper.Map<EventConstraintType>(eventConstraintType);
-                await _rmDatabaseContext.EventConstraintTypes.AddAsync(inserting_event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.EventConstraintTypes.Add(inserting_event_constraint_type);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Updates the event constraint type from dataabase
         /// </summary>
         /// <param name="eventConstraintType"> The event constraint type model </param>
-        public async void UpdateEventConstraintType(EventConstraintTypeModel eventConstraintType)
+        public void UpdateEventConstraintType(EventConstraintTypeModel eventConstraintType)
         {
             try
             {
                 var updating_event_constraint_type = _rmMapper.Map<EventConstraintType>(eventConstraintType);
                 _rmDatabaseContext.EventConstraintTypes.Update(updating_event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -134,13 +134,13 @@ namespace MeetHub.API.Repositories
         /// Removes event constraint type from database
         /// </summary>
         /// <param name="eventConstraintTypeId"> The event constraint type id </param>
-        public async void DeleteEventConstraintType(int eventConstraintTypeId)
+        public void DeleteEventConstraintType(int eventConstraintTypeId)
         {
             try
             {
-                var event_constraint_type = await _rmDatabaseContext.EventConstraintTypes.FirstOrDefaultAsync(loc => loc.Id == eventConstraintTypeId);
+                var event_constraint_type = _rmDatabaseContext.EventConstraintTypes.FirstOrDefault(loc => loc.Id == eventConstraintTypeId);
                 _rmDatabaseContext.EventConstraintTypes.Remove(event_constraint_type);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/generated-invite",
+      "controller": "GeneratedInvite",
+      "action": "GetAllGeneratedInvite"
+    },
+    {
+      "template": "api/generated-invite/{id}",
+      "controller": "GeneratedInvite",
+      "action": "GetGeneratedInvite"
+    },
+    {
+      "template": "api/generated-invite",
+      "controller": "GeneratedInvite",
+      "action": "AddGeneratedInvite"
+    },
+    {
+      "template": "api/generated-invite/{id}",
+      "controller": "GeneratedInvite",
+      "action": "UpdateGeneratedInvite"
+    },
+    {
+      "template": "api/generated-invite/{id}",
+      "controller": "GeneratedInvite",
+      "action": "DeleteGeneratedInvite"
+    }
+  ]
+}

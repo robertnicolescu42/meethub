@@ -97,13 +97,13 @@ namespace MeetHub.API.Repositories
         /// Adds commentReply to database
         /// </summary>
         /// <param name="commentReply"> The comment reply model </param>
-        public async void AddCommentReply(CommentReplyModel commentReply)
+        public void AddCommentReply(CommentReplyModel commentReply)
         {
             try
             {
                 var inserting_comment_reply = _rmMapper.Map<CommentReply>(commentReply);
-                await _rmDatabaseContext.CommentReplies.AddAsync(inserting_comment_reply);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.CommentReplies.Add(inserting_comment_reply);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -116,13 +116,13 @@ namespace MeetHub.API.Repositories
         /// Update the comment reply from dataabase
         /// </summary>
         /// <param name="commentReply"> The updated comment reply model</param>
-        public async void UpdateCommentReply(CommentReplyModel commentReply)
+        public void UpdateCommentReply(CommentReplyModel commentReply)
         {
             try
             {
                 var updating_comment_reply = _rmMapper.Map<CommentReply>(commentReply);
                 _rmDatabaseContext.CommentReplies.Update(updating_comment_reply);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -134,13 +134,13 @@ namespace MeetHub.API.Repositories
         /// Removes comment reply from database
         /// </summary>
         /// <param name="commentReplyId"> The comment reply id </param>
-        public async void DeleteCommentReply(int commentReplyId)
+        public void DeleteCommentReply(int commentReplyId)
         {
             try
             {
-                var comment_reply = await _rmDatabaseContext.CommentReplies.FirstOrDefaultAsync(cr => cr.Id == commentReplyId);
+                var comment_reply = _rmDatabaseContext.CommentReplies.FirstOrDefault(cr => cr.Id == commentReplyId);
                 _rmDatabaseContext.CommentReplies.Remove(comment_reply);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

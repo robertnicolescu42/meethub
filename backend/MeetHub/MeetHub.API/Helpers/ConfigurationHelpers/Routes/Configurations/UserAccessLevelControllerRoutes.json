@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "template": "api/user-access-level",
+      "controller": "UserAccessLevel",
+      "action": "GetAllUserAccessLevels"
+    },
+    {
+      "template": "api/user-access-level/{id}",
+      "controller": "UserAccessLevel",
+      "action": "GetUserAccessLevel"
+    },
+    {
+      "template": "api/user-access-level",
+      "controller": "UserAccessLevel",
+      "action": "AddUserAccessLevel"
+    },
+    {
+      "template": "api/user-access-level/{id}",
+      "controller": "UserAccessLevel",
+      "action": "UpdateUserAccessLevel"
+    },
+    {
+      "template": "api/user-access-level/{id}",
+      "controller": "UserAccessLevel",
+      "action": "DeleteUserAccessLevel"
+    }
+  ]
+}

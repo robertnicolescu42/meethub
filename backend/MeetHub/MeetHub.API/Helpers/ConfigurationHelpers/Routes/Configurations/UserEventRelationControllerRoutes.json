@@ -1,0 +1,34 @@
+{
+  "routes": [
+    {
+      "template": "api/user-event-relation",
+      "controller": "UserEventRelation",
+      "action": "GetAllRelations"
+    },
+    {
+      "template": "api/user-event-relation/user/{id}",
+      "controller": "UserEventRelation",
+      "action": "GetRelationByUserId"
+    },
+    {
+      "template": "api/user-event-relation/event/{id}",
+      "controller": "UserEventRelation",
+      "action": "GetRelationByEventId"
+    },
+    {
+      "template": "api/user-event-relation/user/{userId}/event/{eventId}",
+      "controller": "UserEventRelation",
+      "action": "GetUserEventRelation"
+    },
+    {
+      "template": "api/user-event-relation",
+      "controller": "UserEventRelation",
+      "action": "AddRelation"
+    },
+    {
+      "template": "api/user-event-relation/user/{userId}/event/{eventId}",
+      "controller": "UserEventRelation",
+      "action": "DeleteRelation"
+    }
+  ]
+}

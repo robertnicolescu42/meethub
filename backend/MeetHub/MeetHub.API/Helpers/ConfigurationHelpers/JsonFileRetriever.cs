@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-namespace MeetHub.API.Helpers
+namespace MeetHub.API.Helpers.ConfigurationHelpers
 {
     /// <summary>
     /// Json file retriever class
@@ -47,7 +47,7 @@ namespace MeetHub.API.Helpers
         /// <returns></returns>
         public static string GetConfigurationValue(string fieldKey, string configFileName)
         {
-            var config = JsonFileRetriever.GetConfiguration(configFileName);
+            var config = GetConfiguration(configFileName);
             return config[fieldKey].Value<string>();
         }
 
@@ -59,7 +59,7 @@ namespace MeetHub.API.Helpers
         /// <returns></returns>
         public static List<T> GetConfigurationObjectValue<T>(string fieldKey, string configFileName)
         {
-            var config = JsonFileRetriever.GetConfiguration(configFileName);
+            var config = GetConfiguration(configFileName);
             var jsonArray = config[fieldKey] as JArray; // Explicitly cast to JArray
 
             if (jsonArray == null || jsonArray.Count == 0)

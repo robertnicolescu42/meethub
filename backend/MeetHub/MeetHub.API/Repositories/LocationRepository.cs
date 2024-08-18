@@ -98,13 +98,13 @@ namespace MeetHub.API.Repositories
         /// Adds location to database
         /// </summary>
         /// <param name="location"> The location model </param>
-        public async void AddLocation(LocationModel location)
+        public void AddLocation(LocationModel location)
         {
             try
             {
                 var inserting_location = _rmMapper.Map<Location>(location);
-                await _rmDatabaseContext.Locations.AddAsync(inserting_location);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.Locations.Add(inserting_location);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -117,13 +117,13 @@ namespace MeetHub.API.Repositories
         /// Update the location from dataabase
         /// </summary>
         /// <param name="location"> The updated location model</param>
-        public async void UpdateLocation(LocationModel location)
+        public void UpdateLocation(LocationModel location)
         {
             try
             {
                 var updating_location = _rmMapper.Map<Location>(location);
                 _rmDatabaseContext.Locations.Update(updating_location);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -135,13 +135,13 @@ namespace MeetHub.API.Repositories
         /// Removes location from database
         /// </summary>
         /// <param name="locationId"> The location id </param>
-        public async void DeleteLocation(int locationId)
+        public void DeleteLocation(int locationId)
         {
             try
             {
-                var location = await _rmDatabaseContext.Locations.FirstOrDefaultAsync(loc => loc.Id == locationId);
+                var location = _rmDatabaseContext.Locations.FirstOrDefault(loc => loc.Id == locationId);
                 _rmDatabaseContext.Locations.Remove(location);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

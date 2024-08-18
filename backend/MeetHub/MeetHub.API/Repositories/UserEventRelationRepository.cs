@@ -4,7 +4,6 @@ using MeetHub.API.Entities;
 using MeetHub.API.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace MeetHub.API.Repositories
 {
@@ -54,7 +53,7 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="userId"> The user id </param>
         /// <param name="eventId"> The event id </param>
-        void DeleteUSerEventRelation(int userId, int eventId);
+        void DeleteUserEventRelation(int userId, int eventId);
 
         #endregion Methods
 
@@ -133,13 +132,13 @@ namespace MeetHub.API.Repositories
         /// Adds user-event relation to database
         /// </summary>
         /// <param name="userEventRelation"> The user-event relation model </param>
-        public async void AddUserEventRelation(UserEventRelationModel userEventRelation)
+        public void AddUserEventRelation(UserEventRelationModel userEventRelation)
         {
             try
             {
                 var inserting_relation = _rmMapper.Map<UserEventRelation>(userEventRelation);
-                await _rmDatabaseContext.UserEventRelations.AddAsync(inserting_relation);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.UserEventRelations.Add(inserting_relation);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -153,13 +152,13 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="userId"> The user id </param>
         /// <param name="eventId"> The event id </param>
-        public async void DeleteUSerEventRelation(int userId, int eventId)
+        public void DeleteUserEventRelation(int userId, int eventId)
         {
             try
             {
-                var relation = await _rmDatabaseContext.UserEventRelations.FirstOrDefaultAsync(rel => rel.UserId == userId && rel.EventId == eventId);
+                var relation = _rmDatabaseContext.UserEventRelations.FirstOrDefault(rel => rel.UserId == userId && rel.EventId == eventId);
                 _rmDatabaseContext.UserEventRelations.Remove(relation);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

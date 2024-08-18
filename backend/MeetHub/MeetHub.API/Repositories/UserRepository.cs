@@ -98,13 +98,13 @@ namespace MeetHub.API.Repositories
         /// Adds user to database
         /// </summary>
         /// <param name="user"> The user model </param>
-        public async void AddUser(UserModel user)
+        public void AddUser(UserModel user)
         {
             try
             {
                 var inserting_user = _rmMapper.Map<User>(user);
-                await _rmDatabaseContext.Users.AddAsync(inserting_user);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.Users.Add(inserting_user);
+                _rmDatabaseContext.SaveChanges();
 
             }
             catch (SqlException ex)
@@ -117,13 +117,13 @@ namespace MeetHub.API.Repositories
         /// Update the user from dataabase
         /// </summary>
         /// <param name="user"> The updated user model</param>
-        public async void UpdateUser(UserModel user)
+        public void UpdateUser(UserModel user)
         {
             try
             {
                 var updating_user = _rmMapper.Map<User>(user);
                 _rmDatabaseContext.Users.Update(updating_user);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -135,13 +135,13 @@ namespace MeetHub.API.Repositories
         /// Removes user from database
         /// </summary>
         /// <param name="userId"> The user id </param>
-        public async void DeleteUser(int userId)
+        public void DeleteUser(int userId)
         {
             try
             {
-                var user = await _rmDatabaseContext.Users.FirstOrDefaultAsync(loc => loc.Id == userId);
+                var user = _rmDatabaseContext.Users.FirstOrDefault(loc => loc.Id == userId);
                 _rmDatabaseContext.Users.Remove(user);
-                await _rmDatabaseContext.SaveChangesAsync();
+                _rmDatabaseContext.SaveChanges();
             }
             catch (SqlException ex)
             {

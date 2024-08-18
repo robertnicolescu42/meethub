@@ -1,4 +1,5 @@
 using MeetHub.API.Context;
+using MeetHub.API.Helpers.ConfigurationHelpers.Routes;
 using MeetHub.API.Mappers;
 using MeetHub.API.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,7 @@ builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRe
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
 builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
-builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
+builder.Services.AddScoped<IGeneratedInviteRepository, GeneratedInviteRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
 builder.Services.AddScoped<IUserEventRelationRepository, UserEventRelationRepository>();
@@ -65,6 +66,26 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+#region Routes mapping
+
+var routeConfigs = RouteConfigRetriever.GetFileRoutes();
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    foreach (var routeConfig in routeConfigs)
+    {
+        endpoints.MapControllerRoute(
+            name: $"{routeConfig.Controller}_{routeConfig.Action}",
+            pattern: routeConfig.Template,
+            defaults: new { controller = routeConfig.Controller, action = routeConfig.Action }
+        );
+    }
+});
+
 app.MapControllers();
+
+#endregion Routes mapping
 
 app.Run();
