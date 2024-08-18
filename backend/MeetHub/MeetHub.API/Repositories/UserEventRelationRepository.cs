@@ -53,7 +53,7 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="userId"> The user id </param>
         /// <param name="eventId"> The event id </param>
-        void DeleteUSerEventRelation(int userId, int eventId);
+        void DeleteUserEventRelation(int userId, int eventId);
 
         #endregion Methods
 
@@ -152,7 +152,7 @@ namespace MeetHub.API.Repositories
         /// </summary>
         /// <param name="userId"> The user id </param>
         /// <param name="eventId"> The event id </param>
-        public void DeleteUSerEventRelation(int userId, int eventId)
+        public void DeleteUserEventRelation(int userId, int eventId)
         {
             try
             {
