@@ -18,7 +18,7 @@ namespace MeetHub.API.Repositories
         /// Gets all event thumbnails from database asyncronous
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<EventThumbnailModel>> GetAllEventTHumbnailsAsync();
+        Task<IEnumerable<EventThumbnailModel>> GetAllEventThumbnailsAsync();
 
         /// <summary>
         /// Gets event thumbnail from database asyncronous
@@ -76,7 +76,7 @@ namespace MeetHub.API.Repositories
         /// Gets all event thumbnails from database asyncronous
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<EventThumbnailModel>> GetAllEventTHumbnailsAsync()
+        public async Task<IEnumerable<EventThumbnailModel>> GetAllEventThumbnailsAsync()
         {
             var thumbnails = await _rmDatabaseContext.EventThumbnails.ToListAsync();
             return _rmMapper.Map<IEnumerable<EventThumbnailModel>>(thumbnails);
