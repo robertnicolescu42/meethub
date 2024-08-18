@@ -45,7 +45,7 @@ builder.Services.AddScoped<IEventConstraintTypeRepository, EventConstraintTypeRe
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventThumbnailRepository, EventThumbnailRepository>();
 builder.Services.AddScoped<IEventTypeRepository, EventTypeRepository>();
-builder.Services.AddScoped<IGeneratedInvitesRepository, GeneratedInvitesRepository>();
+builder.Services.AddScoped<IGeneratedInviteRepository, GeneratedInviteRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IUserAccessLevelRepository, UserAccessLevelRepository>();
 builder.Services.AddScoped<IUserEventRelationRepository, UserEventRelationRepository>();
