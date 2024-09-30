@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './public/login/login.component';
 import { SignupComponent } from './public/signup/signup.component';
 import { AboutComponent } from './public/about/about.component';
+import { DashboardComponent } from './secure/dashboard/dashboard.component';
 
 export const routes: Routes = [
   // Public routes
@@ -19,7 +20,7 @@ export const routes: Routes = [
   // Secure routes
   {
     path: 'secure',
-    children: [],
+    children: [{ path: 'dashboard', component: DashboardComponent }],
   },
 
   // Fallback route
