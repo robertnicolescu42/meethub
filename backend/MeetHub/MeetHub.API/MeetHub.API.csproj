@@ -25,7 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ComplexModels\" />
+    <Folder Include="Models\" />
+	<Folder Include="Context\"/>
+	  <Folder Include="Controllers\"/>
+	  <Folder Include="Entities\"/>
+	  <Folder Include="Helpers\"/>
+	  <Folder Include="Mappers\"/>
+	  <Folder Include="Migrations\"/>
+	  <Folder Include="Repositories\"/>
+	  <Folder Include="Resources\"/>
   </ItemGroup>
 
 </Project>

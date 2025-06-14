@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>bin\Release\net8.0\publish\meethub-api-publish</_PublishTargetUrl>
+    <History>True|2024-08-29T23:30:28.7043084Z||;True|2024-08-30T02:30:16.8168843+03:00||;True|2024-08-30T00:44:00.2295344+03:00||;True|2024-08-30T00:43:44.5960612+03:00||;True|2024-08-30T00:21:32.3643291+03:00||;True|2024-08-30T00:18:34.7457869+03:00||;True|2024-08-30T00:16:04.0286983+03:00||;True|2024-08-30T00:00:31.2786861+03:00||;True|2024-08-27T22:10:16.0219817+03:00||;True|2024-08-27T21:55:54.3127412+03:00||;True|2024-08-27T20:30:38.4649671+03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".gitignore">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Context/MeetHubDatabaseContext.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/CommentController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/CommentReplyController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/CurrencyController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/EventConstraintTypeController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/EventController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/EventThumbnailController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/EventTypeController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/GeneratedInviteController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/LocationController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/UserAccessLevelController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/UserController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Controllers/UserEventRelationController.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Entities/Comment.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/CommentReply.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/Currency.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/Event.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Entities/EventConstraintType.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/EventThumbnail.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/EventType.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/GeneratedInvite.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/Location.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/User.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/UserAccessLevel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Entities/UserEventRelation.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/DumpDataConfiguration.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/JsonFileRetriever.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/CommentControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/CommentReplyControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/CurrencyControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/EventConstraintsControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/EventControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/EventThumbnailsControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/EventTypeControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/GeneratedInvitesControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/LocationControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/UserAccessLevelControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/UserControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/Configurations/UserEventRelationControllerRoutes.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/RouteConfig.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/ConfigurationHelpers/Routes/RouteConfigRetriever.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Helpers/Constants.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Helpers/Enumerations/EnvironmentTypeEnumeration.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Mappers/CommentMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/CommentReplyMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/CurrencyMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/EventConstraintTypeMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/EventMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/EventThumbnailMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/EventTypeMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/GeneratedInviteMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/LocationMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/UserAccessLevelMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/UserEventRelationMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Mappers/UserMapper.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="MeetHub.API.http">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Migrations/20240815194328_InitialDatabaseMigration.cs">
+      <publishTime>08/15/2024 22:43:28</publishTime>
+    </File>
+    <File Include="Migrations/20240815194328_InitialDatabaseMigration.Designer.cs">
+      <publishTime>08/15/2024 22:43:28</publishTime>
+    </File>
+    <File Include="Migrations/20240817100414_TestMigration.cs">
+      <publishTime>08/17/2024 13:04:15</publishTime>
+    </File>
+    <File Include="Migrations/20240817100414_TestMigration.Designer.cs">
+      <publishTime>08/17/2024 13:04:15</publishTime>
+    </File>
+    <File Include="Migrations/20240817111240_Debugging.cs">
+      <publishTime>08/17/2024 14:12:40</publishTime>
+    </File>
+    <File Include="Migrations/20240817111240_Debugging.Designer.cs">
+      <publishTime>08/17/2024 14:12:40</publishTime>
+    </File>
+    <File Include="Migrations/MeetHubDatabaseContextModelSnapshot.cs">
+      <publishTime>08/17/2024 14:12:40</publishTime>
+    </File>
+    <File Include="Models/CommentModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/CommentReplyModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/ComplexModels/EventSchemaModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/ComplexModels/UserSchemaModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/CurrencyModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/EventConstraintTypeModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/EventModel.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Models/EventThumbnailModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/EventTypeModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/GeneratedInviteModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/LocationModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/UserAccessLevelModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/UserEventRelationModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Models/UserModel.cs">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Program.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Properties/launchSettings.json">
+      <publishTime>08/18/2024 22:22:30</publishTime>
+    </File>
+    <File Include="Repositories/CommentReplyRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/CommentRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/CurrencyRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/EventConstraintTypeRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/EventRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/EventThumbnailRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/EventTypeRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/GeneratedInviteRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/LocationRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/UserAccessLevelRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/UserEventRelationRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Repositories/UserRepository.cs">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+    <File Include="Resources/DumpData.json">
+      <publishTime>08/27/2024 20:22:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

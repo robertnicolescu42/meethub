@@ -62,27 +62,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 #region Routes mapping
 
-var routeConfigs = RouteConfigRetriever.GetFileRoutes();
-
 app.UseRouting();
-
-app.UseEndpoints(endpoints =>
-{
-    foreach (var routeConfig in routeConfigs)
-    {
-        endpoints.MapControllerRoute(
-            name: $"{routeConfig.Controller}_{routeConfig.Action}",
-            pattern: routeConfig.Template,
-            defaults: new { controller = routeConfig.Controller, action = routeConfig.Action }
-        );
-    }
-});
 
 app.MapControllers();
 
